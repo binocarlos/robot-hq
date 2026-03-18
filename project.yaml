@@ -1,0 +1,33 @@
+apiVersion: helix.ml/v1alpha1
+kind: Project
+metadata:
+  name: robot-hq
+spec:
+  description: "Full-stack web application"
+  technologies: [React, Go, PostgreSQL]
+  guidelines: |
+    Use conventional commits. All PRs require tests.
+  repository:
+    url: "https://github.com/binocarlos/robot-hq"
+    branch: main
+  startup:
+    install: "docker compose build"
+    start:   "docker compose up -d"
+  kanban:
+    wip_limits:
+      planning:       5      # 0 = unlimited
+      implementation: 3
+      review:         3
+  tasks:
+    - title: "Set up CI pipeline"
+      description: "Configure GitHub Actions"   # optional
+    - title: "Add authentication"
+  agent:
+    name: "Project Assistant"
+    model: claude-opus-4-6
+    provider: anthropic
+    system_prompt: |
+      You are a coding assistant for this project.
+    tools:
+      web_search: true
+      browser: false
