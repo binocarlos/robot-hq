@@ -19,9 +19,10 @@ spec:
       implementation: 3
       review:         3
   tasks:
-    - title: "Set up CI pipeline"
-      description: "Configure GitHub Actions"   # optional
-    - title: "Add authentication"
+    - title: "Add a second real-time graph to the home page"
+      description: "On the home screen there is currently a single real-time graph which shows telemetry for our robots.  Can we have a second real-time telemetry graph that shows the current emotional breakdown distribution?"
+    - title: "Add tests for the API"
+      description: "We currently don't test the API at all - please add a test suite and hook up github actions to run those tests on every push"
   agent:
     name: "Project Assistant"
     model: claude-opus-4-6
