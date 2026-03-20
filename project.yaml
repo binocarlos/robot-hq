@@ -4,12 +4,11 @@ metadata:
   name: robot-hq
 spec:
   description: "Full-stack web application"
-  technologies: [React, Go, PostgreSQL]
   guidelines: |
     Use conventional commits. All PRs require tests.
   repository:
     url: "https://github.com/binocarlos/robot-hq"
-    branch: main
+    default_branch: main
   startup:
     install: "docker compose build"
     start:   "docker compose up -d"
@@ -25,10 +24,9 @@ spec:
       description: "We currently don't test the API at all - please add a test suite and hook up github actions to run those tests on every push"
   agent:
     name: "Project Assistant"
+    runtime: claude_code
     model: claude-opus-4-6
     provider: anthropic
-    system_prompt: |
-      You are a coding assistant for this project.
     tools:
       web_search: true
       browser: true
