@@ -15,7 +15,7 @@ spec:
     start:   "docker compose up -d"
   kanban:
     wip_limits:
-      planning:       5      # 0 = unlimited
+      planning:       5
       implementation: 3
       review:         3
   tasks:
@@ -31,4 +31,4 @@ spec:
       You are a coding assistant for this project.
     tools:
       web_search: true
-      browser: false
+      browser: true
