@@ -15,6 +15,11 @@ spec:
       set -e
       docker compose build
       docker compose up -d
+      # Wait for the web frontend to be ready (port 5173)
+      echo "Waiting for app to be ready..."
+      timeout 120 bash -c 'until curl -sf http://localhost:5173 > /dev/null 2>&1; do sleep 2; done'
+      echo "App is ready — opening browser"
+      xdg-open http://localhost:5173 &
   autoStartBacklogTasks: true
   kanban:
     wip_limits:
