@@ -1,4 +1,4 @@
-apiVersion: helix.ml/v1alpha1
+apiVersion: app.aispec.org/v1alpha1
 kind: Project
 metadata:
   name: robot-hq
@@ -15,7 +15,7 @@ spec:
       set -e
       docker compose build
       docker compose up -d
-  auto_start_backlog_tasks: true
+  autoStartBacklogTasks: true
   kanban:
     wip_limits:
       planning:       5
